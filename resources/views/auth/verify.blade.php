@@ -33,7 +33,7 @@
                 <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-xl">Verify</button>
             </form>
             <div class="mt-4 text-sm text-gray-300">
-                Didn’t receive a code? Check your spam folder.
+                Enter the code sent to your email to complete registration.
             </div>
         </div>
     </div>

@@ -680,22 +680,23 @@
 
         (function(){
             function handleArrow(e) {
+                if (e.repeat) return;
                 var k = e.key || e.code;
                 var keyCode = e.keyCode || e.which;
                 var isRight = (k === 'ArrowRight' || k === 'Right' || k === 'KeyD' || keyCode === 39);
                 var isLeft = (k === 'ArrowLeft' || k === 'Left' || k === 'KeyA' || keyCode === 37);
                 if (isRight) {
                     e.preventDefault();
+                    e.stopPropagation();
                     if (modal && !modal.classList.contains('hidden')) nextPage(); else nextPageInline();
                 } else if (isLeft) {
                     e.preventDefault();
+                    e.stopPropagation();
                     if (modal && !modal.classList.contains('hidden')) prevPage(); else prevPageInline();
                 }
             }
             window.addEventListener('keydown', handleArrow, true);
             document.addEventListener('keydown', handleArrow, true);
-            window.addEventListener('keyup', handleArrow, true);
-            document.addEventListener('keyup', handleArrow, true);
         })();
     </script>
 @endsection

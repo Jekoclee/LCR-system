@@ -347,9 +347,10 @@
                     closeRules();
                 }
             });
-            @if($errors->any())
+            const hasErrors = {{ session()->has('errors') ? 'true' : 'false' }};
+            if (hasErrors) {
                 openLogin();
-            @endif
+            }
         });
     </script>
     @yield('scripts')
